@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Rekrutacja2" Class="DatabaseContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-OGSKMHK\NAUKASQL;Initial Catalog=Rekrutacja2;Integrated Security=True" SettingsObjectName="MovieBook.Properties.Settings" SettingsPropertyName="Rekrutacja2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Film" Member="Film">
+    <Type Name="Film">
+      <Column Name="imagePath" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="productionYear" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descrption" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

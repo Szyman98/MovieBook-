@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="MovieBook.Views.FilmView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MovieBook.Views" xmlns:viewsmodel="clr-namespace:MovieBook.ViewsModel" d:DataContext="{d:DesignInstance Type=viewsmodel:FilmViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="350"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DockPanel HorizontalAlignment="Stretch">
+            <Image DockPanel.Dock="Left" Width="300" Source="{Binding Path=film.imagePath}"></Image>
+            <DockPanel DockPanel.Dock="Right" Width="auto">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Margin="10" TextAlignment="Left" Text="{Binding Path=film.title}" Style="{StaticResource Title}"></TextBlock>
+                    <TextBlock DockPanel.Dock="Top" Margin="10,5,0,0" TextAlignment="Left" Text="{Binding Path=film.productionYear, StringFormat='Rok produkcji: {0}'}" Style="{StaticResource normalTexbox}"></TextBlock>
+                    <TextBlock DockPanel.Dock="Top" Margin="10,5,0,0" TextAlignment="Left" Text="{Binding Path=film.director, StringFormat='Reżyster: {0}'}" Style="{StaticResource normalTexbox}"></TextBlock>
+                    <ScrollViewer>
+                        <TextBlock Padding="10" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=film.descrption}" ></TextBlock>
+                    </ScrollViewer>
+                </DockPanel>
+                
+            </DockPanel>
+            
+        </DockPanel>
+
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Button Width="200" MinHeight="100"  Content="Wróć do listy" Margin="10" Command="{Binding backToFilmList}"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="MovieBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieBook"
+        xmlns:views="clr-namespace:MovieBook.Views"
+        xmlns:viewsmodel="clr-namespace:MovieBook.ViewsModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewsmodel:FilmListViewModel}">
+                <views:FilmListView></views:FilmListView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewsmodel:FilmViewModel}">
+                <views:FilmView></views:FilmView>
+            </DataTemplate>
+
+
+
+        </Grid.Resources>
+
+
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+    </Grid>
+</Window>
